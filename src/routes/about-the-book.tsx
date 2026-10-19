@@ -30,7 +30,7 @@ function Page() {
           <p className="animate-rise mt-8 font-serif text-2xl italic text-muted-foreground" style={{ animationDelay: "240ms" }}>A tender story about a father and son.</p>
           <a href="#availability" className="btn-ink animate-rise mt-10" style={{ animationDelay: "360ms" }}>Find Your Copy</a>
         </div>
-        <div className="animate-rise mx-auto w-full max-w-sm" style={{ animationDelay: "200ms" }}><BookCover className="-rotate-2" /></div>
+        <div className="mx-auto w-full max-w-md"><BookCover eager className="-rotate-2" /></div>
       </section>
 
       <section className="border-y bg-secondary/60">

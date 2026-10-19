@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import branch from "@/assets/branch.png";
-import { ArtPlaceholder, BookCover, Reveal } from "@/components/site";
+import { ArtPlaceholder, BookCover, MotionLink, Reveal, Stagger, StaggerItem } from "@/components/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,21 +29,21 @@ function Index() {
         <img src={branch} alt="" aria-hidden width={1536} height={768}
           className="animate-drift pointer-events-none absolute -right-40 -top-10 w-[900px] max-w-none opacity-60" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:py-32">
-          <div>
-            <p className="eyebrow animate-rise">Introducing the illustrated story by L.E. Rogers</p>
-            <h1 className="animate-rise mt-8 text-6xl leading-[0.98] md:text-8xl" style={{ animationDelay: "120ms" }}>
+          <Stagger>
+            <StaggerItem><p className="eyebrow">Introducing the illustrated story by L.E. Rogers</p></StaggerItem>
+            <StaggerItem><h1 className="mt-8 text-6xl leading-[0.98] md:text-8xl">
               Every Little Crow <em className="text-accent">Has a Story.</em>
-            </h1>
-            <p className="animate-rise mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "260ms" }}>
+            </h1></StaggerItem>
+            <StaggerItem><p className="mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
               Discover a tender illustrated story of courage, kindness, forgiveness, and finding where you belong.
-            </p>
-            <div className="animate-rise mt-10 flex flex-wrap gap-4" style={{ animationDelay: "400ms" }}>
-              <Link to="/about-the-book" className="btn-ink">Discover the Book</Link>
-              <Link to="/about-the-author" className="btn-line">Meet the Author</Link>
-            </div>
-          </div>
-          <div className="animate-rise mx-auto w-full max-w-sm" style={{ animationDelay: "300ms" }}>
-            <BookCover className="rotate-2 transition-transform duration-700 hover:rotate-0" />
+            </p></StaggerItem>
+            <StaggerItem className="mt-10 flex flex-wrap gap-4">
+              <MotionLink to="/about-the-book" className="btn-ink">Discover the Book</MotionLink>
+              <MotionLink to="/about-the-author" className="btn-line">Meet the Author</MotionLink>
+            </StaggerItem>
+          </Stagger>
+          <div className="mx-auto w-full max-w-md">
+            <BookCover eager className="rotate-2" />
           </div>
         </div>
       </section>
