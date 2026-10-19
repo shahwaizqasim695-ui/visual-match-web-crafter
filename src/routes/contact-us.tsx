@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { PageHero } from "@/components/site";
 
-export const Route = createFileRoute("/contact")({
+export const Route = createFileRoute("/contact-us")({
   head: () => ({
     meta: [
       { title: "Contact — L.E. Rogers" },
